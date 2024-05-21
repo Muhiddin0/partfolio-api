@@ -57,7 +57,7 @@ MIDDLEWARE = [
 
 # Settings to allow all origins for CORS
 
-# Trusted origins for CSRF
+# Trust ed origins for CSRF
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173"
     ]
