@@ -12,8 +12,8 @@ class ModeratorTechnologyList(models.Model):
     skils = models.ForeignKey(Skil, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return " ".join(self.skils.all())
-
+        return self.skils.skil
+        
 class Offer(models.Model):
     name = models.CharField(max_length=100)
     logo = models.ImageField(upload_to="offers/")
@@ -39,9 +39,9 @@ class Moderator(models.Model):
     facebook = models.URLField(null=True, blank=True)
     location = models.URLField(max_length=100, null=True, blank=True)
 
-    skil_list = models.ManyToManyField(ModeratorTechnologyList, null=True, blank=True)
-    offer = models.ManyToManyField(Offer, null=True, blank=True)
-    projects = models.ManyToManyField("project.Project", null=True, blank=True)
+    skil_list = models.ManyToManyField(ModeratorTechnologyList, blank=True)
+    offer = models.ManyToManyField(Offer, blank=True)
+    projects = models.ManyToManyField("project.Project", blank=True)
 
     def __str__(self):
         return self.name
