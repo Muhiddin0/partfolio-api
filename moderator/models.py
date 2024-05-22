@@ -34,7 +34,7 @@ class ProjectVideo(models.Model):
     video_url = models.URLField()
     
     def __str__(self) -> str:
-        return self.image.split('/')[-1]
+        return self.video_url
 
         
 class Project(models.Model):
@@ -42,7 +42,7 @@ class Project(models.Model):
     description = models.TextField()
     technology_list = models.ManyToManyField(ModeratorTechnologyList)
     images = models.ManyToManyField(ProjectImage)
-    videos = models.ManyToManyField(ProjectVideo)
+    videos = models.ManyToManyField(ProjectVideo, blank=True)
     reles_date = models.DateField(null=True, blank=True)
     link = models.URLField()
 
