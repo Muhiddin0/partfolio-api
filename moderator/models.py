@@ -20,7 +20,7 @@ class Offer(models.Model):
     link = models.URLField()
     
     def __str__(self) -> str:
-        return self.offer
+        return self.name
 
         
 # Create your models here.
