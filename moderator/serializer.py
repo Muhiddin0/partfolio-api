@@ -5,7 +5,25 @@ from project.models import *
 class ModeratorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Moderator
-        fields = '__all__'
+        fields = [
+            'id',
+            'name',
+            'birth_date',
+            'expirence',
+            'position',
+            'description',
+            'profile',
+            'telegram',
+            'instagram',
+            'youtube',
+            'tiktok',
+            'linkedin',
+            'twitter',
+            'facebook',
+            'location',
+            'skil_list',
+            'offer',
+        ]
         depth = 2
 
 class ProjectsSerializer(serializers.ModelSerializer):
