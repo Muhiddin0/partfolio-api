@@ -31,7 +31,7 @@ class ProjectImage(models.Model):
         return self.image.url.split('/')[-1]
 
 class ProjectVideo(models.Model):
-    image = models.URLField()
+    video_url = models.URLField()
     
     def __str__(self) -> str:
         return self.image.split('/')[-1]
