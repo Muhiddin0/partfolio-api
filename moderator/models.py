@@ -25,7 +25,7 @@ class Offer(models.Model):
         
 # Create your models here.
 class ProjectImage(models.Model):
-    image = models.ImageField(upload_to="/projects")
+    image = models.ImageField(upload_to="projects/")
     
     def __str__(self) -> str:
         return self.image.split('/')[-1]
