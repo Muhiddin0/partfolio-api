@@ -33,3 +33,9 @@ class ProjectsSerializer(serializers.ModelSerializer):
             'projects',
         ]
         depth = 2
+
+class ProjectsRetriveSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
+        fields = "__all__"
+        depth = 2

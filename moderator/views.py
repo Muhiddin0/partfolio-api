@@ -18,8 +18,8 @@ class ModeratorProjectsListView(generics.RetrieveAPIView):
 
 class ModeratorProjectsRetriveView(generics.RetrieveAPIView):
     queryset = models.Moderator.objects.all()
-    serializer_class = serializer.ProjectsSerializer
+    serializer_class = serializer.ProjectsRetriveSerializer
 
     def get(self, request, *args, **kwargs):
-        self.queryset.filter(projects__id=kwargs['project_pk'])
+        self.queryset = self.queryset.get(projects__id=kwargs['project_pk']).projects
         return super().get(request, *args, **kwargs)
