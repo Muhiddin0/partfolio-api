@@ -28,5 +28,8 @@ class ModeratorSerializer(serializers.ModelSerializer):
 
 class ProjectsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Project
-        fields = '__all__'
+        model = Moderator
+        fields = [
+            'projects',
+        ]
+        depth = 2
