@@ -28,7 +28,6 @@ class ModeratorSerializer(serializers.ModelSerializer):
 
 
 class ProjectsSerializer(serializers.ModelSerializer):
-
     
     def to_representation(self, instance):
         # Customize the response data here
