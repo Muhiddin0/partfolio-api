@@ -33,6 +33,7 @@ class ProjectsSerializer(serializers.ModelSerializer):
         model = Moderator
         fields = [
             'projects',
+            'views',
         ]
         depth = 2
             
