@@ -76,7 +76,7 @@ class Moderator(models.Model):
 
         
 class ProjectViewCount(models.Model):
-    ip = models.CharField(max_length=25, unique=True)
+    ip = models.CharField(max_length=25)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
