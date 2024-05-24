@@ -75,7 +75,7 @@ class Moderator(models.Model):
         return self.name
 
         
-class Viewer(models.Model):
+class Views(models.Model):
     ip = models.CharField(max_length=25, unique=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     
