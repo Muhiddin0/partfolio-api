@@ -58,11 +58,11 @@ class IncrementProjectViewCountView(APIView):
         ip_address = request.META.get('REMOTE_ADDR')
         
         # Check if this IP has already viewed this project
-        viewer, created = models.Views.objects.get_or_create(ip=ip_address, project=project)
+        viewer, created = models.ProjectViewCount.objects.get_or_create(ip=ip_address, project=project)
         
         if created:
             message = "View count incremented."
         else:
             message = "IP address already viewed this project."
         
-        return Response({"message": message, "views": models.Views.objects.filter(project=project).count()}, status=status.HTTP_200_OK)
+        return Response({"message": message, "views": models.ProjectViewCount.objects.filter(project=project).count()}, status=status.HTTP_200_OK)
