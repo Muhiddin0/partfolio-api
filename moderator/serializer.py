@@ -44,7 +44,7 @@ class ProjectsSerializer(serializers.ModelSerializer):
         fields = [
             'projects',
         ]
-        depth = 2
+        depth = 3
             
 class ProjectsRetriveSerializer(serializers.ModelSerializer):
     views = serializers.SerializerMethodField()
