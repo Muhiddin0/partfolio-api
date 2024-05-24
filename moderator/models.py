@@ -49,6 +49,7 @@ class Project(models.Model):
     def __str__(self) -> str:
         return self.title
 
+
 class Moderator(models.Model):
     name = models.CharField(max_length=100)
     birth_date = models.DateField()
@@ -69,6 +70,14 @@ class Moderator(models.Model):
     skil_list = models.ManyToManyField(ModeratorTechnologyList, blank=True)
     offer = models.ManyToManyField(Offer, blank=True)
     projects = models.ManyToManyField(Project, blank=True)
-
+    
     def __str__(self):
         return self.name
+
+        
+class Viewer(models.Model):
+    ip = models.CharField(max_length=25, unique=True)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    
+    def __str__(self) -> str:
+        return self.ip

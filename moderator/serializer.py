@@ -35,7 +35,18 @@ class ProjectsSerializer(serializers.ModelSerializer):
         depth = 2
 
 class ProjectsRetriveSerializer(serializers.ModelSerializer):
+    views = serializers.SerializerMethodField()
+
     class Meta:
         model = Project
         fields = "__all__"
         depth = 2
+    
+    def get_views(self, obj):
+        return Viewer.objects.filter(project=obj).count()
+
+class ProjectViesIncreaseSerializer(serializers.Serializer):
+    
+    class Meta:
+        model = Viewer
+        fields = "__all__"
