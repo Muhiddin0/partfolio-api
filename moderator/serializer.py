@@ -27,12 +27,18 @@ class ModeratorSerializer(serializers.ModelSerializer):
         depth = 2
 
 class ProjectsSerializer(serializers.ModelSerializer):
+    views = serializers.SerializerMethodField()
+
     class Meta:
         model = Moderator
         fields = [
             'projects',
         ]
         depth = 2
+            
+    def get_views(self, obj):
+        return ProjectViewCount.objects.filter(project=obj).count()
+
 
 class ProjectsRetriveSerializer(serializers.ModelSerializer):
     views = serializers.SerializerMethodField()
