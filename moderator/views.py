@@ -23,6 +23,7 @@ class ModeratorRetrieveView(generics.RetrieveAPIView):
 class ModeratorProjectsListView(generics.RetrieveAPIView):
     queryset = models.Moderator.objects.all()
     serializer_class = serializer.ProjectsSerializer
+    
 
 class ModeratorProjectsRetriveView(generics.RetrieveAPIView):
     queryset = models.Moderator.objects.all()
