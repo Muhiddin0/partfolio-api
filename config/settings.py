@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['195.161.68.240', '127.0.0.1', 'cdn.muhiddindev.uz']
 CORS_ALLOWED_ORIGINS = [
     'http://195.161.68.240:1000',
     'http://195.161.68.240:1010', # remove
-    'http://195.161.68.240:1011', # remove
+    'http://195.161.68.240:1020', # remove
     'http://127.0.0.1:1000', # remove
     'https://cdn.muhiddindev.uz',
     'https://muhiddindev.uz',
