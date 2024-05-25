@@ -26,8 +26,11 @@ SECRET_KEY = 'django-insecure-%2rj=!hj7nj^=6!)hm*$ut2-m@4(v212pe_u+un7dk+obksj(*
 DEBUG = True
 
 ALLOWED_HOSTS = ['195.161.68.240', '127.0.0.1', 'cdn.muhiddindev.uz']
-
-
+CORS_ALLOWED_ORIGINS = [
+    'http://195.161.68.240:1000',
+    'http://127.0.0.1:1000',
+    'https://cdn.muhiddindev.uz',
+]
 # Application definition
 
 INSTALLED_APPS = [
