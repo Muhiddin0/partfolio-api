@@ -2,4 +2,4 @@
 db.sqlite3
 __pycache__/
 moderator/__pycache__/
-find . -name __pycache__ -type d
+media
