@@ -40,7 +40,7 @@ class ProjectVideo(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    technology_list = models.ManyToManyField(ModeratorTechnologyList, unique=True)
+    technology_list = models.ManyToManyField(ModeratorTechnologyList)
     images = models.ManyToManyField(ProjectImage)
     videos = models.ManyToManyField(ProjectVideo, blank=True)
     reles_date = models.DateField(null=True, blank=True)
