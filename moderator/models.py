@@ -2,14 +2,14 @@ from django.db import models
 
 # Create your models here.
 class Skil(models.Model):
-    skil = models.CharField(max_length=100)
+    skil = models.CharField(max_length=100, unique=True)
     skil_img = models.ImageField(upload_to="skils/")
     
     def __str__(self) -> str:
         return self.skil
 
 class ModeratorTechnologyList(models.Model):
-    skils = models.ForeignKey(Skil, on_delete=models.CASCADE)
+    skils = models.ForeignKey(Skil, on_delete=models.CASCADE, unique=True)
 
     def __str__(self) -> str:
         return self.skils.skil
@@ -40,7 +40,7 @@ class ProjectVideo(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    technology_list = models.ManyToManyField(ModeratorTechnologyList)
+    technology_list = models.ManyToManyField(ModeratorTechnologyList, unique=True)
     images = models.ManyToManyField(ProjectImage)
     videos = models.ManyToManyField(ProjectVideo, blank=True)
     reles_date = models.DateField(null=True, blank=True)
