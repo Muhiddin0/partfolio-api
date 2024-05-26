@@ -70,7 +70,7 @@ class Moderator(models.Model):
     skil_list = models.ManyToManyField(ModeratorTechnologyList, blank=True)
     offer = models.ManyToManyField(Offer, blank=True)
     projects = models.ManyToManyField(Project, blank=True)
-    cv = models.URLField(null=True, blank=True)
+    rezyume = models.URLField(null=True, blank=True)
     
     def __str__(self):
         return self.name
