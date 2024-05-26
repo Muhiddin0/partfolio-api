@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Skil(models.Model):
     skil = models.CharField(max_length=100, unique=True)
-    skil_img = models.ImageField(upload_to="skils/")
+    skil_img = models.URLField()
     
     def __str__(self) -> str:
         return self.skil
@@ -16,7 +16,7 @@ class ModeratorTechnologyList(models.Model):
         
 class Offer(models.Model):
     name = models.CharField(max_length=100)
-    logo = models.ImageField(upload_to="offers/")
+    logo = models.URLField()
     link = models.URLField()
     
     def __str__(self) -> str:
@@ -25,7 +25,7 @@ class Offer(models.Model):
         
 # Create your models here.
 class ProjectImage(models.Model):
-    image = models.ImageField(upload_to="projects/")
+    image = models.URLField()
     
     def __str__(self) -> str:
         return self.image.url.split('/')[-1]
@@ -56,7 +56,7 @@ class Moderator(models.Model):
     expirence = models.IntegerField()
     position = models.CharField(max_length=100)
     description = models.TextField()
-    profile = models.ImageField(upload_to="profile/")
+    profile = models.URLField()
     
     telegram = models.URLField(null=True, blank=True)
     instagram = models.URLField(null=True, blank=True)
