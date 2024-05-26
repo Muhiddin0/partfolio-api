@@ -23,6 +23,7 @@ class ModeratorSerializer(serializers.ModelSerializer):
             'location',
             'skil_list',
             'offer',
+            'rezyume',
         ]
         depth = 2
 
