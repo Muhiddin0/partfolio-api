@@ -47,6 +47,7 @@ class IncrementProjectViewCountView(APIView):
     def post(self, request, *args, **kwargs):
         moderator_pk = self.kwargs['pk']
         project_pk = self.kwargs['project_pk']
+        ip_address = self.kwargs['ip_address']
         
         try:
             # Ensure the project is associated with the given moderator
@@ -56,7 +57,7 @@ class IncrementProjectViewCountView(APIView):
             return Response({"error": "Moderator or Project not found"}, status=status.HTTP_404_NOT_FOUND)
         
         # Get the client's IP address
-        ip_address = request.META.get('REMOTE_ADDR')
+        # ip_address = request.POST.get('REMOTE_ADDR')
         
         # Check if this IP has already viewed this project
         viewer, created = models.ProjectViewCount.objects.get_or_create(ip=ip_address, project=project)
