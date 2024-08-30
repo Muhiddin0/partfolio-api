@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%2rj=!hj7nj^=6!)hm*$ut2-m@4(v212pe_u+un7dk+obksj(*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['195.161.68.240', '127.0.0.1', 'cdn.muhiddindev.uz']
+ALLOWED_HOSTS = ['195.161.68.240', '127.0.0.1', 'cdn.muhiddindev.uz', "api.jscorp.uz"]
 CORS_ALLOWED_ORIGINS = [
     'http://195.161.68.240:1000',
     'http://195.161.68.240:1010', # remove
@@ -34,6 +34,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://cdn.muhiddindev.uz',
     'https://muhiddindev.uz',
     'https://cors-test.codehappy.dev', # remove
+    "https://jscorp.uz"
 ]
 # Application definition
 
@@ -67,8 +68,9 @@ MIDDLEWARE = [
 
 # Trust ed origins for CSRF
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173"
-    ]
+    "http://localhost:5173",
+    "https://api.jscorp.uz",
+]
 
 # CORS settings
 CORS_ORIGIN_ALLOW_ALL = True  # Allow all origins
